@@ -1,3 +1,4 @@
+/* Global Styles */
 *{
     margin:0;
     padding:0;
@@ -20,12 +21,16 @@ button{
     font-family:Arial,Helvetica,sans-serif;
     cursor:pointer
 }
+
+/* Main Section Layout */
 section{
         width:90%;
         max-width:1200px;
         margin:40px auto;
         padding:35px 0
 }
+
+/* Header / Navigation */
 nav{
     width:90%;
     max-width:1200px;
@@ -71,6 +76,8 @@ nav{
     background:#777;
     color:#fff!important
 }
+
+/* Hero Section */
 .hero-content h1{
     font-size:38px;
     line-height:1.15;
@@ -135,6 +142,8 @@ nav{
     font-weight:bold;
     border:1px solid #999
 }
+
+/* General Section Styling */
 section:not(#home){
     border-top:1px solid #ccc
 }
@@ -148,6 +157,8 @@ section h2{
     margin-bottom:25px;
     text-align:center
 }
+
+/* Cards / Services */
 .grid-3{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -189,6 +200,8 @@ section h2{
 .card a:hover{
     color:#2e7d32
 }
+
+/* Training Banner */
 .training-bar{
     width:100%;
     padding:12px 18px;
@@ -216,6 +229,8 @@ section h2{
 .view-btn{
     margin-top:8px
 }
+
+/* Contact Section */
 #contact{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -264,6 +279,8 @@ section h2{
 .card .enter-btn{
     margin-bottom:15px
 }
+
+/* Footer */
 footer{
     width:100%;
     background:#777;
@@ -301,6 +318,8 @@ footer .logo{
     padding:15px;
     font-size:13px
 }
+
+/* Responsive Styles - Tablet */
 @media(max-width:900px){
     nav{
         flex-direction:column;
@@ -342,6 +361,8 @@ footer .logo{
         padding:40px 8%
     }
 }
+
+/* Responsive Styles - Mobile */
 @media(max-width:600px){
     nav{
         width:92%
