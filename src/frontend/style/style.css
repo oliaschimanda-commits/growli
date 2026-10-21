@@ -2,7 +2,7 @@
     --primary-color: #2e7d32;
     --secondary-color: #43a047;
     --warm-cream: #f9f6f0;
-    --harvest-gold: #ffa726;
+    --harvest-gold: rgb(241, 159, 5);
     --harvest-gold-light: #fab650;
     --deep-charcoal: #1e291b;
     --gray: #777;
@@ -69,7 +69,7 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    background: orange;
+    background: var(--harvest-gold);
     z-index: 1000;
     text-decoration: none;
 }
@@ -191,6 +191,8 @@ nav .logo img {
     gap: 50px;
     align-items: center;
     background: linear-gradient(rgb(21, 66, 16), rgba(9, 73, 7, 0.521)), url('../images/bigfarm.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .hero-search {
