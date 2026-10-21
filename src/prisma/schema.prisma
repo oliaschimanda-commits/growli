@@ -1,0 +1,123 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+enum Role {
+  ADMIN
+  USER
+  SUPER_USER
+}
+
+model User {
+  userId    String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  profileImage String?
+  role      Role@default(USER)
+  firstName String?
+  lastName  String?
+  bio       String
+  country   String?
+  state     String?
+  city      String?
+  farming    FarmingCategory
+  scale      Scale @default(SMALL_SCALE)
+  product   Product[] 
+  training  Training[]
+  farmingInformation FarmingInformation[]
+  trainingRegisterUser TrainingRegisterUser[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum Scale {
+  SMALL_SCALE
+  LARGE_SCALE
+}
+
+enum FarmingCategory {
+  CROP_FARMING
+  LIVESTOCK_FARMING
+  POULTRY_FARMING
+  FISHERY
+  HORTICULTURE
+}
+
+
+model Product {
+  productId   String @id @default(uuid())
+  userId      String
+  user        User @relation(fields: [userId], references: [userId])
+  price       Float
+  pronductImage String?
+  quantity    Float
+  farmersName String
+  productName String
+  phoneNumber String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+enum TrainingStatus {
+  ON_GOING
+  ENDED
+}
+
+model Training {
+  trainingId    String @id @default(uuid())
+  authorId      String
+  user          User @relation(fields: [authorId], references: [userId])
+  title         String
+  trainingDate DateTime
+  trainingImage String?
+  country       String
+  state         String
+  city          String
+  place         String
+  description   String
+  trainingRegisterUser TrainingRegisterUser[]
+  status        TrainingStatus @default(ON_GOING)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model TrainingRegisterUser {
+  registryId    String @id @default(uuid())
+  userId        String
+  user          User @relation(fields: [userId], references: [userId])
+  trainimg      Training @relation(fields: [trainingEventId], references: [trainingId])
+  trainingEventId   String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+//Sets the status of a farming post whether they were created by the admin
+//or they are user created but verified or not
+enum FarmingInfoStatus {
+  ADMIN
+  VERIFIED
+  UNVERIFIED
+}
+
+model FarmingInformation {
+  farmingId     String @id @default(uuid())
+  authorId      String
+  farmingInfoImage String?
+  user          User @relation(fields: [authorId], references: [userId])
+  status        FarmingInfoStatus @default(UNVERIFIED)
+  title         String
+  article       String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
