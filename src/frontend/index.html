@@ -7,25 +7,23 @@
     <link rel="stylesheet" href="style/type.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <figure class="logo">
-                <img src="images/growli-logo.png" alt="Growli Logo">
-            </figure>
-            <ul class="links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="farming-info.html">Farming Info</a></li>
-                <li><a href="training.html">Training</a></li>
-                <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-            <article class="auth">
-                <button class="login-btn"><a href="login.html">Login</a></button>
-                <button class="register-btn"><a href="register.html">Register</a></button>
-            </article>
-        </nav>
-    </header>
+    <nav>
+        <div class="logo">
+            <img src="./images/growli-logo.png" alt="Growli Logo">
+        </div>
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="farming-info.html">Farming Info</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="auth">
+            <button class="login-btn"><a href="login.html" >Login</a></button>
+            <button class="register-btn"><a href="register.html" >Register</a></button>
+        </div>
+    </nav>
 
     <main>
         <section id="home">
@@ -64,86 +62,62 @@
             </article>
         </section>
 
-        <section id="featured-info">
-            <h2>Featured Farming Information</h2>
-            <p>Explore our curated selection of articles, guides, and resources on various farming topics. Stay up-to-date with the latest trends and best practices in agriculture.</p>
-            <article class="grid-3" aria-label="Featured farming guides">
-                <article class="card">
-                    <figure class="img-box"><figcaption>Crop Guide Image</figcaption></figure>
-                    <h3>Crop Guide</h3>
-                    <p>Learn about different crops, their growth requirements, and best practices for cultivation.</p>
-                    <a href="farming-info.html">Learn More</a>
-                </article>
-                <article class="card">
-                    <figure class="img-box"><figcaption>Livestock Guide Image</figcaption></figure>
-                    <h3>Livestock Guide</h3>
-                    <p>Discover best practices for raising healthy livestock, including nutrition, housing, and disease prevention.</p>
-                    <a href="farming-info.html">Learn More</a>
-                </article>
-                <article class="card">
-                    <figure class="img-box"><figcaption>Soil Health Image</figcaption></figure>
-                    <h3>Soil Health Guide</h3>
-                    <p>Understand the importance of soil health and learn techniques to improve soil fertility and structure.</p>
-                    <a href="farming-info.html">Learn More</a>
-                </article>
-            </article>
-        </section>
+    <section>
+        <h2>Featured Farming Information</h2>
+        <div class="grid-3">
+            <div class="card">
+                <div class="img-box">Crop Image</div>
+                <h3>Crop Guide</h3>
+                <p>Learn about crop selection, planting and crop management.</p><a href="farming-info.html">→ Read More</a></div>
+            <div class="card">
+                <div class="img-box">Pest Image</div>
+                <h3>Pest Guide</h3>
+                <p>Learn how to identify and manage common agricultural pests.</p><a href="farming-info.html">→ Read More</a></div>
+            <div class="card">
+                <div class="img-box">Fertilizer Image</div>
+                <h3>Fertilizer Guide</h3>
+                <p>Learn about fertilizer selection and proper application.</p><a href="farming-info.html">→ Read More</a></div>
+        </div>
+    </section>
 
-        <section id="events">
-            <h2>Upcoming Events</h2>
-            <p>Stay updated with the latest agricultural events and conferences. Join us for networking opportunities and knowledge sharing.</p>
-            <article class="training-bar">
-                <p><b>Agricultural Training Conference</b> &bull; Date: 1 November &bull; Location: Ndola</p>
-                <a href="training.html"><button type="button">View Details</button></a>
-            </article>
-        </section>
+    <section>
+        <h2>Upcoming Training</h2>
+        <div class="training-bar">
+            <p><b>Modern Maize Production</b> • Date: 1 November • Location: Ndola</p>
+            <a href="training.html"><button>View Details</button></a>
+        </div>
+    </section>
 
-        <section id="products">
-            <h2>Products From Farmers</h2>
-            <p>Discover a variety of agricultural products available for purchase directly from local farmers. Support your community and access fresh, high-quality produce.</p>
-            <article class="grid-3" aria-label="Products from farmers">
-                <article class="card">
-                    <figure class="img-box"><figcaption>Fresh Produce Image</figcaption></figure>
-                    <h3>Fresh Produce</h3>
-                    <p>Buy fresh fruits and vegetables directly from local farmers.</p>
-                    <a href="marketplace.html"><button class="view-btn" type="button">View</button></a>
-                </article>
-                <article class="card">
-                    <figure class="img-box"><figcaption>Livestock Products Image</figcaption></figure>
-                    <h3>Livestock Products</h3>
-                    <p>Purchase meat, dairy, and other livestock products from trusted local sources.</p>
-                    <a href="marketplace.html"><button class="view-btn" type="button">View</button></a>
-                </article>
-                <article class="card">
-                    <figure class="img-box"><figcaption>Agricultural Tools Image</figcaption></figure>
-                    <h3>Agricultural Tools</h3>
-                    <p>Find a variety of farming tools and equipment to support your agricultural activities.</p>
-                    <a href="marketplace.html"><button class="view-btn" type="button">View</button></a>
-                </article>
-            </article>
-        </section>
+    <section>
+        <h2>Products From Farmers</h2>
+        <div class="grid-3">
+            <div class="card">
+                <div class="img-box">Product Image</div>
+                <h3>Maize</h3>
+                <p>Price: ZMW 8 /kg</p><a href="marketplace.html"><button class="view-btn">View</button></a></div>
+            <div class="card">
+                <div class="img-box">Product Image</div>
+                <h3>Beans</h3>
+                <p>Price: ZMW 25 /kg</p><a href="marketplace.html"><button class="view-btn">View</button></a></div>
+            <div class="card">
+                <div class="img-box">Product Image</div>
+                <h3>Groundnuts</h3>
+                <p>Price: ZMW 30 /kg</p><a href="marketplace.html"><button class="view-btn">View</button></a></div>
+        </div>
+    </section>
     </main>
 
     <footer>
-        <article class="footer-col">
-            <figure class="logo">Growli</figure>
-            <p>Growli, linking farmers to knowledge</p>
-        </article>
-        <article class="footer-col">
-            <h4>Direct Links</h4>
-            <a href="index.html">Home</a>
-            <a href="farming-info.html">Farming Info</a>
-            <a href="training.html">Training</a>
-            <a href="marketplace.html">Marketplace</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About</a>
-        </article>
-        <article class="footer-col">
-            <h4>Get in Touch</h4>
-            <a href="contact.html">Contact Growli</a>
-            <a href="about.html">About our platform</a>
-        </article>
+        <div class="footer-col">
+            <div class="logo">Growli</div>
+            <p>Farming Information Made Accessible</p>
+        </div>
+        <div class="footer-col">
+            <h4>Direct Links</h4><a href="index.html">Home</a><a href="farming-info.html">Farming Info</a><a href="training.html">Training</a><a href="marketplace.html">Marketplace</a><a href="contact.html">Contact</a><a href="about.html">About</a></div>
+        <div class="footer-col">
+            <h4>Follow Us</h4><a href="#">Facebook</a><a href="#">Twitter</a><a href="#">LinkedIn</a></div>
     </footer>
-    <p class="copyright">&copy; 2026 Growli. All rights reserved.</p>
+    <div class="copyright">© 2026 Growli. All Rights Reserved. | Privacy Policy | Terms of Service</div>
+    <script src="script.js"></script>
 </body>
 </html>

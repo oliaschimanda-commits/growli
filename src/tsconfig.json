@@ -1,0 +1,26 @@
+
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "esnext",
+    "lib": ["esnext"],
+    "types": ["node"],
+    "esModuleInterop": true,
+    "rootDir": "./generated/prisma",
+    "outDir": "./generated/prismabuild",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true
+  },
+  "include": [
+    "generated/prisma/**/*.ts"
+  ],
+  "exclude": [
+    "generated/prismabuild",
+    "node_modules",
+    "prisma7.config.js"
+  ]
+}
