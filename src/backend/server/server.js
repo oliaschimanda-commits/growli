@@ -18,7 +18,7 @@ app.use(express.json());
 const PORT = process.env.SERVER_PORT || 3000;
 
 app.use('/',auth)
-app.use('/farming',farming)
+app.use('/farminginfo',farming)
 app.use('/product',product)
 app.use('/training',training)
 app.use('/user',users)

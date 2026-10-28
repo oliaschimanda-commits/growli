@@ -81,11 +81,14 @@ export const updateTrainingEvent = async (req, res) => {
 }
 
 export const searchTrainingEvents = async (req, res) => {
-    const { query} = req.query;
+    
+    const { query, page = 1, limit = 10 } = req.query;
 
     try{
 
         const events = await prisma.training.findMany({
+            skip: (page - 1) * limit,
+            take: parseInt(limit),
             where:{
                 OR:[
                     {title: {contains: query}},

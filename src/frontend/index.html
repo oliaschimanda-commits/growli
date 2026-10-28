@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Growli - Home</title>
     <link rel="stylesheet" href="style/style.css">
+    <script type="module" src="./script/index.js" defer></script>
 </head>
 
 <body>
@@ -15,15 +16,19 @@
         </div>
         <ul class="links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="farming-info.html">Farming Info</a></li>
-            <li><a href="training.html">Training</a></li>
-            <li><a href="marketplace.html">Marketplace</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="./pages/farming-info.html">Farming Info</a></li>
+            <li><a href="./pages/training.html">Training</a></li>
+            <li><a href="./pages/marketplace.html">Marketplace</a></li>
+            <li><a href="./pages/contact.html">Contact</a></li>
+            <li><a href="./pages/about.html">About</a></li>
         </ul>
-        <div class="auth">
-            <button class="login-btn" id="login-btn"><a href="" >Login</a></button>
+        <div id="auth" class="auth">
+            <button class="login-btn" id="login-btn"><a href="./pages/login.html" >Login</a></button>
             <button class="register-btn"><a href="./pages/register.html" >Register</a></button>
+        </div>
+        <div id="profile" class="profile">
+            <img src="./images/profile.png" alt="profile picture" >
+            <button class="logout-btn">Logout</button>
         </div>
     </nav>
 
@@ -63,60 +68,52 @@
 
         <section>
             <h2>Featured Farming Information</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="img-box">Crop Image</div>
-                    <h3>Crop Guide</h3>
-                    <p>Learn about crop selection, planting and crop management.</p><a href="./pages/farming-info.html">→ Read More</a></div>
-                <div class="card">
-                    <div class="img-box">Pest Image</div>
-                    <h3>Pest Guide</h3>
-                    <p>Learn how to identify and manage common agricultural pests.</p><a href="./pages/farming-info.html">→ Read More</a></div>
-                <div class="card">
-                    <div class="img-box">Fertilizer Image</div>
-                    <h3>Fertilizer Guide</h3>
-                    <p>Learn about fertilizer selection and proper application.</p><a href="./pages/farming-info.html">→ Read More</a></div>
+            <div id="info-container" class="grid-3">
+                
             </div>
         </section>
 
         <section>
             <h2>Upcoming Training</h2>
-            <div class="training-bar">
-                <p><b>Modern Maize Production</b> • Date: 1 November • Location: Ndola</p>
-                <a href="./pages/training.html"><button>View Details</button></a>
+            <div id="event-container" >
+                
             </div>
+            
         </section>
 
         <section>
             <h2>Products From Farmers</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="img-box">Product Image</div>
-                    <h3>Maize</h3>
-                    <p>Price: ZMW 8 /kg</p><a href="./pages/marketplace.html"><button class="view-btn">View</button></a></div>
-                <div class="card">
-                    <div class="img-box">Product Image</div>
-                    <h3>Beans</h3>
-                    <p>Price: ZMW 25 /kg</p><a href="./pages/marketplace.html"><button class="view-btn">View</button></a></div>
-                <div class="card">
-                    <div class="img-box">Product Image</div>
-                    <h3>Groundnuts</h3>
-                    <p>Price: ZMW 30 /kg</p><a href="./pages/marketplace.html"><button class="view-btn">View</button></a></div>
+            <div id="card-container" class="grid-3">
+
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-col">
-            <div class="logo">Growli</div>
-            <p>Farming Information Made Accessible</p>
+        <div class="footer-container">
+            <ul class="footer-col">
+                <li><p class="logo">Growli</p></li>
+                <li><p>Farming Information Made Accessible</p></li>
+            </ul>
+            <ul class="footer-col">
+                <li><h4>Direct Links</h4></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="./pages/farming-info.html">Farming Info</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <ul class="footer-col">
+                <li><h4>Follow Us</h4></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
         </div>
-        <div class="footer-col">
-            <h4>Direct Links</h4><a href="index.html">Home</a><a href="./pages/farming-info.html">Farming Info</a><a href="training.html">Training</a><a href="marketplace.html">Marketplace</a><a href="contact.html">Contact</a><a href="about.html">About</a></div>
-        <div class="footer-col">
-            <h4>Follow Us</h4><a href="#">Facebook</a><a href="#">Twitter</a><a href="#">LinkedIn</a></div>
+            
+        <p class="copyright">&copy 2026 Growli. All Rights Reserved. | Privacy Policy | Terms of Service</p>
     </footer>
-    <div class="copyright">© 2026 Growli. All Rights Reserved. | Privacy Policy | Terms of Service</div>
 </body>
 
 </html>

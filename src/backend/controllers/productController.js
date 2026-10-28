@@ -50,12 +50,14 @@ export const getAllProducts = async (req, res) => {
 export const getProducts = async (req, res) => {
 
     const { page = 1, limit = 10 } = req.query;
+    var p = parseInt(page);
+    var l = parseInt(limit);
 
     try {
 
         const products = await prisma.product.findMany({
-            skip: (page - 1) * limit,
-            take: parseInt(limit)
+            skip: (p - 1) * l,
+            take: l
         });
         res.json(products);
 
@@ -82,20 +84,29 @@ export const updateProduct = async (req, res) => {
 }
 
 export const searchProducts = async (req, res) => {
-    const { query} = req.query;
+    const { q, page = 1, limit = 10} = req.query;
+    var p = parseInt(page);
+    var l = parseInt(limit);
+    console.log(q)
+    console.log(req.query)
+    console.log(req.originalUrl)
 
     try{
 
         const products = await prisma.product.findMany({
-            where:{
+             where:{
                 OR:[
-                    {productName: {contains: query}},
-                    {farmersName: {contains: query}}
+                    {productName: {contains: q}},
+                    {farmersName: {contains: q}}
                 ]
-            }
+            },
+            skip: (p -1) * l,
+            take: l,
+            orderBy:{ createdAt: 'asc'},
         })
 
         res.status(200).json(products);
+        console.log(products)
 
     }catch(error){
         console.log("Error searching products", error);

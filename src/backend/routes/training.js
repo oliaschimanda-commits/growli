@@ -5,13 +5,11 @@ import { createTrainingEvent, getTrainingEventById, getAllTrainingEvents,
 
 const router = Router();
 
+router.get('/', getTrainingEvents);
+router.get('/search', searchTrainingEvents);
 router.get('/:id',getTrainingEventById);
 
 router.delete('/:id',deleteTrainingEvent);
-
-router.get('/search', searchTrainingEvents);
-
-router.get('/events', getTrainingEvents);
 
 router.post('/update/:id', updateTrainingEvent);
 

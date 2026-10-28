@@ -3,13 +3,13 @@ import {createProduct, getProductById, getAllProducts, getProducts, updateProduc
 
 const router = Router();
 
+router.get('/', getProducts);
+router.get('/search', searchProducts);
 router.get('/:id',getProductById);
 
 router.delete('/:id',deleteProduct);
 
-router.get('/search', searchProducts);
 
-router.get('/users', getProducts);
 
 router.post('update/:id', updateProduct);
 

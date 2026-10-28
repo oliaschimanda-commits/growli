@@ -6,19 +6,21 @@ export const createUser = async (req, res) => {
     const { firstName, lastName, email, password} = req.body;
 
     if (!email || !password) {
-        res.status = 400;
-        return { error: 'Email and password are required' };
+        res.status(400).json('Email and password are required');
+        return
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcrypt.hash(password, 10);    
 
     try{
+        const password = hashedPassword;
+        
         const newUser = await prisma.user.create({
             data: {
                 firstName,
                 lastName,
                 email,
-                hashedPassword
+                password
             }
         })
         res.status(201).json(newUser);
@@ -30,17 +32,17 @@ export const createUser = async (req, res) => {
 
 export const getUserById = async (req, res) => {
     const { id } = req.params;
-
+    console.log("ID: ",id)
     try{
         const user = await prisma.user.findUnique({
-            where: { id: parseInt(id)},
+            where: { userId: id},
         });
         if(!user){
             return res.status(404).json({ message: 'User not found' }); 
         }
         res.json(user);
     } catch (error) {
-        console.error('Error fetching user:', error);
+        console.error(error.meta?.driverAdapterError?.cause)
         res.status(500).json({ message: 'Internal server error' });
     }
 }

@@ -16,11 +16,13 @@
     "exactOptionalPropertyTypes": true
   },
   "include": [
-    "generated/prisma/**/*.ts"
+    "generated/prisma/**/*.ts",
+    "generated/prisma/internal"
   ],
   "exclude": [
     "generated/prismabuild",
     "node_modules",
-    "prisma7.config.js"
+    "prisma7.config.js",
+    "frontend/script"
   ]
 }

@@ -26,11 +26,11 @@ model User {
   role      Role@default(USER)
   firstName String?
   lastName  String?
-  bio       String
+  bio       String?
   country   String?
   state     String?
   city      String?
-  farming    FarmingCategory
+  farming    FarmingCategory?
   scale      Scale @default(SMALL_SCALE)
   product   Product[] 
   training  Training[]
@@ -60,10 +60,10 @@ model Product {
   user        User @relation(fields: [userId], references: [userId])
   price       Float
   pronductImage String?
-  quantity    Float
+  quantity    Float?
   farmersName String
   productName String
-  phoneNumber String
+  phoneNumber String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
@@ -80,11 +80,11 @@ model Training {
   title         String
   trainingDate DateTime
   trainingImage String?
-  country       String
-  state         String
-  city          String
-  place         String
-  description   String
+  country       String?
+  state         String?
+  city          String?
+  place         String?
+  description   String?
   trainingRegisterUser TrainingRegisterUser[]
   status        TrainingStatus @default(ON_GOING)
   createdAt     DateTime @default(now())
@@ -115,8 +115,8 @@ model FarmingInformation {
   farmingInfoImage String?
   user          User @relation(fields: [authorId], references: [userId])
   status        FarmingInfoStatus @default(UNVERIFIED)
-  title         String
-  article       String
+  title         String?
+  article       String? @db.Text
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 }

@@ -6,27 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Growli - Marketplace</title>
     <link rel="stylesheet" href="../style/style.css">
+    <script type="module" src="../script/marketplace.js" defer></script>
 </head>
 
 <body>
     <nav>
-        <div class="logo">Growli</div>
-        <div class="links"><a href="../index.html">Home</a><a href="farming-info.html">Farming Info</a><a href="training.html">Training</a><a href="marketplace.html">Marketplace</a><a href="contact.html">Contact</a><a href="about.html">About</a></div>
-        <div class="auth"><a href="login.html" class="login-btn">Login</a><a href="register.html" class="register-btn">Register</a></div>
+        <div class="logo">
+            <img src="../images/growli-logo.png" alt="Growli Logo">
+        </div>
+        <ul class="links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./farming-info.html">Farming Info</a></li>
+            <li><a href="./training.html">Training</a></li>
+            <li><a href="./marketplace.html">Marketplace</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./about.html">About</a></li>
+        </ul>
+        <div id="auth" class="auth">
+            <button class="login-btn" id="login-btn"><a href="./login.html" >Login</a></button>
+            <button class="register-btn"><a href="./register.html" >Register</a></button>
+        </div>
+        <div id="profile" class="profile">
+            <img src="../images/profile.png" alt="profile picture" >
+            <button class="logout-btn">Logout</button>
+        </div>
     </nav>
     <section>
         <h1>Farmers Marketplace</h1>
         <p>Discover agricultural products offered by farmers in different parts of Zambia.</p>
-        <div class="hero-search"><input type="text" placeholder="Search products"><button class="enter-btn">Search</button></div>
+        <div class="hero-search">
+            <input id="search-product" name="search-product" type="text" placeholder="Search products">
+            <button id="search-button" class="enter-btn">Search</button>
+        </div>
     </section>
     <section>
         <h2>Products From Farmers</h2>
-        <div class="grid-3">
+        <div id="market-container" class="grid-3">
+            <!--The data is dynamically added from the database this can be commented to view the layout-->
+
+            <!--
             <div class="card">
                 <div class="img-box">Maize Image</div>
                 <h3>Maize</h3>
                 <p>Price: ZMW 8 /kg</p>
-                <p>Location: Ndola</p><button class="view-btn">View Product</button></div>
+                <p>Location: Ndola</p><button class="view-btn">View Product</button>
+            </div>
             <div class="card">
                 <div class="img-box">Beans Image</div>
                 <h3>Beans</h3>
@@ -52,20 +76,37 @@
                 <h3>Vegetables</h3>
                 <p>Price: ZMW 10 /kg</p>
                 <p>Location: Kitwe</p><button class="view-btn">View Product</button></div>
+            -->
+        </div>
+        <div class="more-nav">
+            <button id="next-btn" class="next-btn" type="button">More...</button>
         </div>
     </section>
     <footer>
-        <div class="footer-col">
-            <div class="logo">Growli</div>
-            <p>Farming Information Made Accessible</p>
+        <div class="footer-container">
+            <ul class="footer-col">
+                <li><p class="logo">Growli</p></li>
+                <li><p>Farming Information Made Accessible</p></li>
+            </ul>
+            <ul class="footer-col">
+                <li><h4>Direct Links</h4></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="./pages/farming-info.html">Farming Info</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <ul class="footer-col">
+                <li><h4>Follow Us</h4></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
         </div>
-        <div class="footer-col">
-            <h4>Direct Links</h4><a href="../index.html">Home</a><a href="farming-info.html">Farming Info</a><a href="training.html">Training</a><a href="marketplace.html">Marketplace</a><a href="contact.html">Contact</a><a href="about.html">About</a></div>
-        <div class="footer-col">
-            <h4>Follow Us</h4><a href="#">Facebook</a><a href="#">Twitter</a><a href="#">LinkedIn</a></div>
+            
+        <p class="copyright">&copy 2026 Growli. All Rights Reserved. | Privacy Policy | Terms of Service</p>
     </footer>
-    <div class="copyright">© 2026 Growli. All Rights Reserved.</div>
-    <script src="script.js"></script>
 </body>
 
 </html>

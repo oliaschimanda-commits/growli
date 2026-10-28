@@ -81,11 +81,14 @@ export const updateFarmingInfo = async (req, res) => {
 }
 
 export const searchFarmingInfo = async (req, res) => {
-    const { query} = req.query;
+    
+    const { query, page = 1, limit = 10 } = req.query;
 
     try{
 
         const info = await prisma.farmingInformation.findMany({
+            skip: (page-1) * limit,
+            take: parseInt(limit),
             where:{
                 OR:[
                     {title: {contains: query}},
