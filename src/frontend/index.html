@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Growli - Home</title>
-    <link rel="stylesheet" href="style/style.css">
+    <title>Growli agricultural information center</title>
+    <link rel="stylesheet" href="style/type.css">
     <script type="module" src="./script/index.js" defer></script>
 </head>
-
 <body>
     <nav>
         <div class="logo">
@@ -34,37 +32,40 @@
 
     <main>
         <section id="home">
-        <div class="hero-content">
-            <h1>FARMING INFORMATION<br>MADE ACCESSIBLE</h1>
-            <p>Access practical farming guides, training resources, and marketplace connections. Grow your knowledge with trusted, locally relevant farming information.</p>
-            <div class="hero-search">
-                <input type="text" placeholder="Search farming info"><br>
-                <button class="enter-btn">Search</button>
-            </div>
-            <small>Type keywords like maize, pests, fertilizer, soil health</small>
-        </div>
-    </section>
+            <article class="hero-content">
+                <h1>FARMING INFORMATION<br>MADE ACCESSIBLE</h1>
+                <p>Access practical farming guides, expert training, market updates, and local resources to help you grow healthier crops, livestock, and build a more successful farm.</p>
+                <form class="hero-search">
+                    <input type="text" placeholder="Search for farming information" aria-label="Search for farming information">
+                    <button class="enter-btn" type="submit">Search</button>
+                </form>
+            </article>
+        </section>
 
-    <section>
-        <h2>What We Offer</h2>
-        <div class="grid-3">
-            <div class="card">
-                <div class="img-box">Farming Image</div>
-                <h3>Farming Information</h3>
-                <p>Access useful guides on crops, soil, planting schedules and farming practices.</p><a href="farming-info.html">Learn More</a>
-            </div>
-            <div class="card">
-                <div class="img-box">Training Image</div>
-                <h3>Training</h3>
-                <p>Discover workshops and training programs designed to improve farming skills.</p><a href="training.html">Learn More</a>
-            </div>
-            <div class="card">
-                <div class="img-box">Marketplace Image</div>
-                <h3>Marketplace</h3>
-                <p>Buy and sell agricultural products directly from local farmers.</p><a href="marketplace.html">Visit Marketplace</a>
-            </div>
-        </div>
-    </section>
+        <section id="services">
+            <h2>What We Offer</h2>
+            <p>We provide a wide range of resources and services to help farmers improve their skills, increase productivity, and access new markets. Our offerings include:</p>
+            <article class="grid-3" aria-label="Growli services">
+                <article class="card">
+                    <figure class="img-box"><figcaption>Farming Image</figcaption></figure>
+                    <h3>Farming Information</h3>
+                    <p>Access useful guides on crops, soil, planting schedules and farming practices.</p>
+                    <a href="farming-info.html">Learn More</a>
+                </article>
+                <article class="card">
+                    <figure class="img-box"><figcaption>Training Image</figcaption></figure>
+                    <h3>Training</h3>
+                    <p>Discover workshops and training programs designed to improve farming skills.</p>
+                    <a href="training.html">Learn More</a>
+                </article>
+                <article class="card">
+                    <figure class="img-box"><figcaption>Marketplace Image</figcaption></figure>
+                    <h3>Marketplace</h3>
+                    <p>Connect with buyers and sellers to trade agricultural products and services.</p>
+                    <a href="marketplace.html">Learn More</a>
+                </article>
+            </article>
+        </section>
 
         <section>
             <h2>Featured Farming Information</h2>
@@ -115,5 +116,4 @@
         <p class="copyright">&copy 2026 Growli. All Rights Reserved. | Privacy Policy | Terms of Service</p>
     </footer>
 </body>
-
 </html>
