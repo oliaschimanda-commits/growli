@@ -1,5 +1,5 @@
 
-import { api, valueLengthIsValid, loggedInKey, token } from "./util.js";
+import {tokenKey, userKey, isLoggedIn, api, valueLengthIsValid, loggedInKey, token } from "./util.js";
 
 
 function logOut() {
@@ -7,6 +7,9 @@ function logOut() {
 
     logOutBtn.addEventListener('click',(e)=>{
         sessionStorage.setItem(loggedInKey,JSON.stringify(false));
+        localStorage.setItem(tokenKey,"");
+        localStorage.setItem(userKey,JSON.stringify({user: ""}));
+        isLoggedIn.isLogged = false;
         token.token = "";
         window.location.href = "../index.html"
     });

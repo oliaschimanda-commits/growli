@@ -8,7 +8,6 @@ export const token = {token: localStorage.getItem(tokenKey)}
 export const loggedUser = {user: JSON.parse(localStorage.getItem(userKey))}
 
 export const api = async (url,options = {}) => {
-    console.log("token ", token)
     const res = await fetch(url,{
         headers: { 'Content-Type': 'application/json', 'Authorization': token.token, ...(options.headers || {})},
         ...options,

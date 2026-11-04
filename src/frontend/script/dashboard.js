@@ -1,4 +1,4 @@
-import { api, loggedUser, parsePrice, loggedInKey, token, userKey } from "./util.js";
+import { api, loggedUser, parsePrice, loggedInKey, token, userKey, tokenKey, isLoggedIn } from "./util.js";
 
 
 
@@ -7,8 +7,11 @@ function logOut() {
 
     logOutBtn.addEventListener('click',(e)=>{
         sessionStorage.setItem(loggedInKey,JSON.stringify(false));
+        localStorage.setItem(tokenKey,"");
+        localStorage.setItem(userKey,JSON.stringify({user: ""}));
+        isLoggedIn.isLogged = false;
         token.token = "";
-        window.location.href = "../index.html"
+        window.location.replace("../index.html")
     });
 
 }
@@ -158,14 +161,48 @@ if(true){
                         <tr>
                             <td colspan="2"><p>${v.productName} - ${v.quantity}kg</p></td>
                             <td><p>K${parsePrice(v.price)}</p></td>
-                            <td><button>Edit</button></td>
+                            <td><button id="${v.productId}" >Edit</button></td>
+                            <td><button command="show-modal" commandfor="product-dialog" id="delete-${v.productId}" >Delete</button></td>
                         </tr>
                     `
                 )
-            });
 
-            //edit product
-            editProductSetup()
+                
+                const editProductBtn = document.getElementById(v.productId);
+                editProductBtn.addEventListener('click', async (e)=>{
+
+                    e.preventDefault();
+                    dashContainer.replaceChildren();
+                    dashContainer.insertAdjacentHTML('beforeend',
+                        
+                        `
+                            <form class="card" id="edit-product-form">
+                                <h2>Edit Product (${v.productName})</h2>
+                                
+                                <input name="productName" type="text" placeholder="Product Name" value="${v.productName}"><br><br>
+                                <input name="price" type="number" step="any" placeholder="price" value="${v.price}" ><br><br>
+                                <input name="quantity" type="text" placeholder="Quantity" value="${v.quantity}" ><br><br>
+                                <input name="phoneNumber" type="tel" placeholder="Phone Number" value="${v.phoneNumber}" ><br><br>
+                                <button type="submit" class="enter-btn">Edit product</button>
+                            </form>
+                        `
+                    )            
+        
+                    //edit product
+                    editProductSetup()
+                });
+
+                //delete setup
+                const deleteProductBtn = document.getElementById(`delete-${v.productId}`);
+                const messageEl = document.getElementById("product-diag-message");
+                const message = `Do you want to delete ${v.productName}!`;
+                
+                deleteProductBtn.addEventListener('click', async (e) =>{
+                    prodDeleteId.id = v.productId;
+                    messageEl.textContent = message;
+                });
+            });
+            
 
         });
 

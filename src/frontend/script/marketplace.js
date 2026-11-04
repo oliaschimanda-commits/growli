@@ -1,10 +1,13 @@
-import { api, showLoginUi, loggedInKey, token } from "./util.js";
+import { api, showLoginUi, loggedInKey, token, tokenKey, userKey, isLoggedIn } from "./util.js";
 
 function logOut() {
     const logOutBtn = document.getElementById('logout-btn');
 
     logOutBtn.addEventListener('click',(e)=>{
         sessionStorage.setItem(loggedInKey,JSON.stringify(false));
+        localStorage.setItem(tokenKey,"");
+        localStorage.setItem(userKey,JSON.stringify({user: ""}));
+        isLoggedIn.isLogged = false;
         token.token = "";
         window.location.href = "../index.html"
     });
