@@ -1,8 +1,10 @@
 import prisma from "../../prisma/prisma.js";
 import { json } from "node:stream/consumers";
+import bcrypt from 'bcrypt'
 
 export const createProduct = async (req, res) => {
-    const { data:data} = req.body;
+    const data = req.body;
+    console.log(data)
 
     try{
         const newProduct = await prisma.product.create({
@@ -68,11 +70,13 @@ export const getProducts = async (req, res) => {
 }
 
 export const updateProduct = async (req, res) => {
-    const {id} = req.params;
-    const {data } = req.body;
+    const data = req.body;
 
     try{
         const updateProduct = await prisma.product.update({
+            where:{
+                productId: data.productId
+            },
             data:data
         })
 
@@ -114,11 +118,36 @@ export const searchProducts = async (req, res) => {
     }
 }
 
+export const getUserProducts = async (req,res) =>{
+
+    const {id, limit = 10 , page = 1} = req.query;
+
+    try{
+
+        const products = await prisma.product.findMany({
+            skip: (page-1)* limit,
+            take: parseInt(limit),
+            where: {
+                userId: id
+            }
+        });
+
+        res.status(200).json(products);
+
+    }catch(error){
+        console.log("Failed to fetch user products",error);
+        res.status(500).json("Internal server error");
+    }
+
+    
+}
+
 export const deleteProduct = async (req, res) => {
-    const {id} = req.params;
+    const {id} = req.body;
+    console.log("Delete", id)
     try{
         const product = await prisma.product.delete({
-            where: {id: parseInt(id)}
+            where: {productId: id}
         })
         res.status(200).json({message: "Product deleted successfully"});
     }catch(error){

@@ -1,11 +1,19 @@
 
-import { api, valueLengthIsValid, showLoginUi } from "./util.js";
+import { api, valueLengthIsValid, loggedInKey, token } from "./util.js";
 
-window.addEventListener('DOMContentLoaded', ()=>{
 
-    showLoginUi();
-});
+function logOut() {
+    const logOutBtn = document.getElementById('logout-btn');
 
+    logOutBtn.addEventListener('click',(e)=>{
+        sessionStorage.setItem(loggedInKey,JSON.stringify(false));
+        token.token = "";
+        window.location.href = "../index.html"
+    });
+
+}
+
+logOut()
 const form = document.getElementById("register-form");
 
 console.log("Hello")
@@ -20,14 +28,15 @@ form.addEventListener("submit",async (e) =>{
 
 
     const formData = new FormData(e.target);
-    const payLoad = Object.fromEntries(formData);
+    const payLoad = Object.fromEntries(
+        [...formData.entries()].map(([k,v])=>{
+            if(!valueLengthIsValid(v.trim(),100)){
+                IS_VALID =  false;
+            }
 
-    formData.forEach((v,k) => {
-        if(valueLengthIsValid(v,50)){
-            console.log(k, "Is not valid")
-            IS_VALID = false
-        }
-    });
+            return [k,v,trim()]
+        })
+    );
 
     if(payLoad.password !== payLoad.confirm_password){
         console.log("password dont match")

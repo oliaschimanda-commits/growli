@@ -1,8 +1,14 @@
+//Uses localStorage not advisable
 
-export const isLoggedIn = {isLogged: false};
-export const token = {token: ''}
+export const loggedInKey = "LOG_IN";
+export const userKey = "USER_IN";
+export const tokenKey = "TOKEN_IN"
+export const isLoggedIn = {isLogged: JSON.parse(localStorage.getItem(loggedInKey))};
+export const token = {token: localStorage.getItem(tokenKey)}
+export const loggedUser = {user: JSON.parse(localStorage.getItem(userKey))}
 
 export const api = async (url,options = {}) => {
+    console.log("token ", token)
     const res = await fetch(url,{
         headers: { 'Content-Type': 'application/json', 'Authorization': token.token, ...(options.headers || {})},
         ...options,
@@ -37,8 +43,11 @@ export const showLoginUi = () =>{
     const profile = document.getElementById("profile");
 
     console.log(authC,profile);
+    console.log("utils: ",JSON.parse(localStorage.getItem(loggedInKey)))
+    const isLog = JSON.parse(localStorage.getItem(loggedInKey))
 
-    if(isLoggedIn.isLogged){
+    if(isLog){
+        console.log("Is logged in")
         if(authC != null){
             
             authC.style.display = 'none';
@@ -48,6 +57,7 @@ export const showLoginUi = () =>{
             profile.style.display = 'visible';
         }
     }else{
+        console.log("is logged out")
 
         if(authC != null){
 
@@ -60,3 +70,7 @@ export const showLoginUi = () =>{
     }
 }
 
+export function parsePrice(price){
+    //price conversion will be done here
+    return price;
+}

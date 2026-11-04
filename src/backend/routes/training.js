@@ -1,4 +1,5 @@
-import { Router } from 'express'
+import { Router } from 'express';
+import { authenticate } from '../middleware/authMiddleware.js';
 import { createTrainingEvent, getTrainingEventById, getAllTrainingEvents, 
     getTrainingEvents, updateTrainingEvent, searchTrainingEvents, 
     deleteTrainingEvent } from '../controllers/trainingEventController.js';
@@ -9,10 +10,10 @@ router.get('/', getTrainingEvents);
 router.get('/search', searchTrainingEvents);
 router.get('/:id',getTrainingEventById);
 
-router.delete('/:id',deleteTrainingEvent);
+router.delete('/:id',authenticate,deleteTrainingEvent);
 
-router.post('/update/:id', updateTrainingEvent);
+router.post('/update/:id',authenticate, updateTrainingEvent);
 
-router.post('create',createTrainingEvent);
+router.post('create',authenticate,createTrainingEvent);
 
 export default router;

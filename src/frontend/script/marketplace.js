@@ -1,11 +1,18 @@
-import { api, showLoginUi } from "./util.js";
+import { api, showLoginUi, loggedInKey, token } from "./util.js";
 
-window.addEventListener('DOMContentLoaded', ()=>{
+function logOut() {
+    const logOutBtn = document.getElementById('logout-btn');
 
-    showLoginUi();
-});
+    logOutBtn.addEventListener('click',(e)=>{
+        sessionStorage.setItem(loggedInKey,JSON.stringify(false));
+        token.token = "";
+        window.location.href = "../index.html"
+    });
 
-    const productContainer = document.getElementById("market-container");
+}
+
+logOut()
+const productContainer = document.getElementById("market-container");
 
 if(true){
     const itemList = [];

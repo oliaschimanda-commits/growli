@@ -1,14 +1,23 @@
 
-import { api, showLoginUi } from "./util.js";
+import { api, isLoggedIn , loggedInKey, token} from "./util.js";
 
-window.addEventListener('DOMContentLoaded', ()=>{
 
-    showLoginUi();
-});
+function logOut() {
+    const logOutBtn = document.getElementById('logout-btn');
 
+    logOutBtn.addEventListener('click',(e)=>{
+        const a = false;
+        localStorage.setItem(loggedInKey,JSON.stringify(false));
+        token.token = ""
+        window.location.href = "./index.html"
+    });
+
+}
+
+logOut()
 const cardContainer = document.getElementById('card-container');
 
-console.log("index", cardContainer)
+console.log("index", isLoggedIn.isLogged)
 
 //if true simulates if user is authenticated; to be implemented
 if(true){

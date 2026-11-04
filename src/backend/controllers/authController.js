@@ -44,13 +44,7 @@ export const login = async (req,res) => {
   });
 
   res.status(200).json({
-    user:{
-      id: user.userId,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-      createdAt: user.createdAt
-    },
+    user:user,
     accessToken: token
   });
 };

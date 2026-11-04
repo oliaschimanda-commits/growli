@@ -1,11 +1,20 @@
-import { api, showLoginUi } from "./util.js";
+import { api, showLoginUi, loggedInKey, token } from "./util.js";
 
-window.addEventListener('DOMContentLoaded', ()=>{
 
-    showLoginUi();
-});
 
-    const infoContainer = document.getElementById("farming-info-container");
+function logOut() {
+    const logOutBtn = document.getElementById('logout-btn');
+
+    logOutBtn.addEventListener('click',(e)=>{
+        sessionStorage.setItem(loggedInKey,JSON.stringify(false));
+        token.token = "";
+        window.location.href = "../index.html"
+    });
+
+}
+
+logOut()
+const infoContainer = document.getElementById("farming-info-container");
 
 if(true){
     const itemList = [];
@@ -76,7 +85,7 @@ if(true){
 
             setData(trainingData);
         }else{
-            const training = await getTainings();
+            const training = await getInfo();
             const trainingData = JSON.parse(JSON.stringify(training.data));
             
             page++;

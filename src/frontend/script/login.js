@@ -1,25 +1,35 @@
-import {api, showLoginUi , valueLengthIsValid, isLoggedIn, token} from './util.js'
+import {api , valueLengthIsValid, isLoggedIn, token, loggedUser, loggedInKey, tokenKey, userKey} from './util.js'
 
 const form = document.getElementById("form-login");
 var IS_VALID = false;
 
-window.addEventListener('DOMContentLoaded', ()=>{
+function logOut() {
+    const logOutBtn = document.getElementById('logout-btn');
 
-    showLoginUi();
-});
+    logOutBtn.addEventListener('click',(e)=>{
+        sessionStorage.setItem(loggedInKey,JSON.stringify(false));
+        token.token = "";
+        window.location.href = "../index.html"
+    });
+
+}
+
+logOut()
 
 form.addEventListener('submit',async (e) => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData);
+    const data = Object.fromEntries(
+                    [...formData.entries()].map(([k,v])=>{
+                        if(!valueLengthIsValid(v.trim(),50)){
+                            IS_VALID = false;
+                        }
+
+                        return [k,v.trim()]
+                    })
+                )
     
-    formData.forEach((v,k) => {
-        
-        if(!valueLengthIsValid(v,50)){
-            IS_VALID = false;
-        }
-    });
 
     if(IS_VALID)
         return
@@ -37,11 +47,14 @@ const login = async (mData) => {
             body: JSON.stringify(mData)
         });
 
-        console.log("User: ",user.data.accessToken);
         token.token = user.data.accessToken;
-        isLoggedIn.isLogged = false;
+        localStorage.setItem(tokenKey,user.data.accessToken)
+        localStorage.setItem(loggedInKey,JSON.stringify(true));
+        localStorage.setItem(userKey,JSON.stringify(user.data));
+        loggedUser.user = user;
         window.location.replace("../index.html")
     } catch (error) {
+        localStorage.setItem(loggedInKey,JSON.stringify(false));
         console.log("Error login", error)
     }
 }

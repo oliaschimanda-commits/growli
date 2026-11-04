@@ -7,30 +7,48 @@
     <title>Growli - Marketplace</title>
     <link rel="stylesheet" href="../style/style.css">
     <script type="module" src="../script/marketplace.js" defer></script>
+    <script type="module" src="../script/main.js" defer></script>
 </head>
 
 <body>
-    <nav>
+    <header>
         <div class="logo">
-            <img src="../images/growli-logo.png" alt="Growli Logo">
+            <div class="logo-flex">
+                <div id="menu" class="menu">
+                    <img  src="../images/menu.png" alt="">
+                </div>
+                <img src="../images/growli-logo.png" alt="Growli Logo">
+            </div>
+            <a  class="profile-left" href="./dashboard.html">
+                <img src="../images/profile.png" alt="">
+            </a>
         </div>
-        <ul class="links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="./farming-info.html">Farming Info</a></li>
-            <li><a href="./training.html">Training</a></li>
-            <li><a href="./marketplace.html">Marketplace</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-            <li><a href="./about.html">About</a></li>
-        </ul>
-        <div id="auth" class="auth">
-            <button class="login-btn" id="login-btn"><a href="./login.html" >Login</a></button>
-            <button class="register-btn"><a href="./register.html" >Register</a></button>
-        </div>
-        <div id="profile" class="profile">
-            <img src="../images/profile.png" alt="profile picture" >
-            <button class="logout-btn">Logout</button>
-        </div>
-    </nav>
+        
+        <nav id="main-nav" class="hidden">
+            <img id="menu-side" class="menu-side" src="../images/menu.png" alt="">
+
+            <ul class="links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./farming-info.html">Farming Info</a></li>
+                <li><a href="./training.html">Training</a></li>
+                <li><a href="./marketplace.html">Marketplace</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./about.html">About</a></li>
+            </ul>
+
+            <div id="auth" class="auth">
+                <button class="login-btn" id="login-btn"><a href="./login.html" >Login</a></button>
+                <button class="register-btn"><a href="./register.html" >Register</a></button>
+            </div>
+            <div id="profile" class="profile">
+                <a href="./dashboard.html">
+                    <img src="../images/profile.png" alt="profile picture" >
+                </a>
+                <button id="logout-btn" class="logout-btn">Logout</button>
+            </div>
+    
+        </nav>
+    </header>
     <section>
         <h1>Farmers Marketplace</h1>
         <p>Discover agricultural products offered by farmers in different parts of Zambia.</p>
