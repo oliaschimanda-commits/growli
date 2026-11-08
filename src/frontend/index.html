@@ -6,7 +6,6 @@
     <meta name="description" content="Practical farming information, training, market updates, and local agricultural resources from Growli.">
     <title>Growli | Farming Information Made Accessible</title>
     <link rel="stylesheet" href="style/style.css">
-    <script type="module" src="./script/index.js" defer></script>
     <script type="module" src="./script/main.js" defer></script>
 </head>
 <body>
@@ -43,8 +42,7 @@
     <main>
         <section id="home" aria-labelledby="hero-title">
             <article class="hero-content">
-                <p class="eyebrow">Knowledge for every growing season</p>
-                <h1 id="hero-title">Farming information<br>made accessible</h1>
+                <h1 id="hero-title">FARMING INFORMATION<br>MADE ACCESSIBLE</h1>
                 <p>Access practical farming guides, expert training, market updates, and local resources to help you grow healthier crops, livestock, and build a more successful farm.</p>
                 <form class="hero-search" role="search">
                     <label class="visually-hidden" for="farming-search">Search farming information</label>
@@ -55,49 +53,87 @@
         </section>
 
         <section id="services" aria-labelledby="services-title">
-            <p class="eyebrow">Grow with confidence</p>
             <h2 id="services-title">What We Offer</h2>
-            <p class="section-intro">We provide practical resources to help farmers improve their skills, increase productivity, and access new markets.</p>
+            <p>We provide a wide range of resources and services to help farmers improve their skills, increase productivity, and access new markets. Our offerings include:</p>
             <article class="grid-3" aria-label="Growli services">
                 <article class="card">
-                    <figure class="img-box"><img src="./images/wheatplant.jpeg" alt="Healthy young crops growing in a field"></figure>
+                    <figure class="img-box"><figcaption>Farming Image</figcaption></figure>
                     <h3>Farming Information</h3>
                     <p>Access useful guides on crops, soil, planting schedules and farming practices.</p>
-                    <a href="./pages/farming-info.html">Explore farming guides <span aria-hidden="true">→</span></a>
+                    <a href="./pages/farming-info.html">Learn More</a>
                 </article>
                 <article class="card">
-                    <figure class="img-box"><img src="./images/cattle2.webp" alt="Cattle grazing on a farm"></figure>
+                    <figure class="img-box"><figcaption>Training Image</figcaption></figure>
                     <h3>Training</h3>
                     <p>Discover workshops and training programs designed to improve farming skills.</p>
-                    <a href="./pages/training.html">Explore training <span aria-hidden="true">→</span></a>
+                    <a href="./pages/training.html">Learn More</a>
                 </article>
                 <article class="card">
-                    <figure class="img-box"><img src="./images/soil-preparation.webp" alt="Prepared soil ready for planting"></figure>
+                    <figure class="img-box"><figcaption>Marketplace Image</figcaption></figure>
                     <h3>Marketplace</h3>
                     <p>Connect with buyers and sellers to trade agricultural products and services.</p>
-                    <a href="./pages/marketplace.html">Visit marketplace <span aria-hidden="true">→</span></a>
+                    <a href="./pages/marketplace.html">Learn More</a>
                 </article>
             </article>
         </section>
 
         <section id="featured-info" aria-labelledby="featured-title">
-            <p class="eyebrow">Learn something new</p>
             <h2 id="featured-title">Featured Farming Information</h2>
-            <p class="section-intro">Explore practical articles and guides on crops, livestock, soil health, and more.</p>
-            <article id="info-container" class="grid-3" aria-label="Featured farming guides"></article>
+            <p>Explore our curated selection of articles, guides, and resources on various farming topics. Stay up-to-date with the latest trends and best practices in agriculture.</p>
+            <article class="grid-3" aria-label="Featured farming guides">
+                <article class="card">
+                    <figure class="img-box"><figcaption>Crop Guide Image</figcaption></figure>
+                    <h3>Crop Guide</h3>
+                    <p>Learn about different crops, their growth requirements, and best practices for cultivation.</p>
+                    <a href="./pages/farming-info.html">Learn More</a>
+                </article>
+                <article class="card">
+                    <figure class="img-box"><figcaption>Livestock Guide Image</figcaption></figure>
+                    <h3>Livestock Guide</h3>
+                    <p>Discover best practices for raising healthy livestock, including nutrition, housing, and disease prevention.</p>
+                    <a href="./pages/farming-info.html">Learn More</a>
+                </article>
+                <article class="card">
+                    <figure class="img-box"><figcaption>Soil Health Image</figcaption></figure>
+                    <h3>Soil Health Guide</h3>
+                    <p>Understand the importance of soil health and learn techniques to improve soil fertility and structure.</p>
+                    <a href="./pages/farming-info.html">Learn More</a>
+                </article>
+            </article>
         </section>
 
         <section id="events" aria-labelledby="events-title">
-            <p class="eyebrow">Meet, learn, and grow</p>
-            <h2 id="events-title">Upcoming Training</h2>
-            <article id="event-container" aria-label="Upcoming agricultural training"></article>
+            <h2 id="events-title">Upcoming Events</h2>
+            <p>Stay updated with the latest agricultural events and conferences. Join us for networking opportunities and knowledge sharing.</p>
+            <article class="training-bar">
+                <p><b>Agricultural Training Conference</b> &bull; Date: 1 November &bull; Location: Ndola</p>
+                <a class="training-link" href="./pages/training.html">View Details</a>
+            </article>
         </section>
 
         <section id="products" aria-labelledby="products-title">
-            <p class="eyebrow">Locally grown, locally shared</p>
             <h2 id="products-title">Products From Farmers</h2>
-            <p class="section-intro">Discover agricultural products offered directly by local farmers.</p>
-            <article id="card-container" class="grid-3" aria-label="Products from farmers"></article>
+            <p>Discover a variety of agricultural products available for purchase directly from local farmers. Support your community and access fresh, high-quality produce.</p>
+            <article class="grid-3" aria-label="Products from farmers">
+                <article class="card">
+                    <figure class="img-box"><figcaption>Fresh Produce Image</figcaption></figure>
+                    <h3>Fresh Produce</h3>
+                    <p>Buy fresh fruits and vegetables directly from local farmers.</p>
+                    <a class="view-btn" href="./pages/marketplace.html">View</a>
+                </article>
+                <article class="card">
+                    <figure class="img-box"><figcaption>Livestock Products Image</figcaption></figure>
+                    <h3>Livestock Products</h3>
+                    <p>Purchase meat, dairy, and other livestock products from trusted local sources.</p>
+                    <a class="view-btn" href="./pages/marketplace.html">View</a>
+                </article>
+                <article class="card">
+                    <figure class="img-box"><figcaption>Agricultural Tools Image</figcaption></figure>
+                    <h3>Agricultural Tools</h3>
+                    <p>Find a variety of farming tools and equipment to support your agricultural activities.</p>
+                    <a class="view-btn" href="./pages/marketplace.html">View</a>
+                </article>
+            </article>
         </section>
     </main>
 
@@ -105,7 +141,7 @@
         <article class="footer-container" aria-label="Growli footer">
             <section class="footer-col">
                 <p class="logo">Growli</p>
-                <p>Farming information made accessible.</p>
+                <p>Growli, linking farmers to knowledge</p>
             </section>
             <nav class="footer-col" aria-label="Direct links">
                 <h2>Direct Links</h2>
@@ -117,14 +153,13 @@
                 <a href="./pages/about.html">About</a>
             </nav>
             <nav class="footer-col" aria-label="Social media">
-                <h2>Follow Us</h2>
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">LinkedIn</a>
+                <h2>Get in Touch</h2>
+                <a href="./pages/contact.html">Contact Growli</a>
+                <a href="./pages/about.html">About our platform</a>
             </nav>
         </article>
             
-        <p class="copyright">&copy 2026 Growli. All Rights Reserved. | Privacy Policy | Terms of Service</p>
+        <p class="copyright">&copy; 2026 Growli. All rights reserved.</p>
     </footer>
 </body>
 </html>
