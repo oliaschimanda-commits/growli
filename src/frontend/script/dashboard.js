@@ -289,20 +289,20 @@ if(true){
             `
             
             <h1>Welcome, ${name}</h1>
-            <div class="grid-3">
-                <div class="card">
+            <article class="grid-3">
+                <article class="card">
                     <p>products</p>
                     <p>24</p>
-                </div>
-                <div class="card">
+                </article>
+                <article class="card">
                     <p>products</p>
                     <p>24</p>
-                </div>
-                <div class="card">
+                </article>
+                <article class="card">
                     <p>products</p>
                     <p>24</p>
-                </div>
-            </div>
+                </article>
+            </article>
             <h3>My Listing</h3>
             <table id="dash-table">
                 

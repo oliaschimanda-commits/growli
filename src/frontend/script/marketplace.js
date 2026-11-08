@@ -109,12 +109,12 @@ function setData(mData) {
     mData.forEach((v,k) =>{
         
         productContainer.insertAdjacentHTML('beforeend',
-            `<div id="${v.productId}" class="card">
-                <img class="img-box" src="${v.pronductImage}" alt="Image of ${v.productName}" />
+            `<article id="${v.productId}" class="card">
+                <figure class="img-box"><img src="${v.pronductImage}" alt="Image of ${v.productName}" /></figure>
                 <h3>${v.productName}</h3>
-                <p>Price: ZMW ${parsePrice(v.price)} /kg</p><a href="./pages/marketplace.html">
-                <button class="view-btn">View</button></a>
-            </div>`
+                <p>Price: ZMW ${parsePrice(v.price)} /kg</p>
+                <a class="view-btn" href="./marketplace.html">View</a>
+            </article>`
         );
 
         const card = document.getElementById(v.productId);

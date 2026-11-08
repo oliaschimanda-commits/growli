@@ -36,11 +36,11 @@ if(true){
             
         infoData.forEach((v,k)=>{
             infoContainer.insertAdjacentHTML('beforeend',
-                `<div id="${v.farmingId}" class="card">
-                    <img class="img-box" src="${v.farmingInfoImage}" alt="Picture of ${v.title}" >
+                `<article id="${v.farmingId}" class="card">
+                    <figure class="img-box"><img src="${v.farmingInfoImage}" alt="Picture of ${v.title}" ></figure>
                     <h3>${v.title}</h3>
                     <p>${v.article}</p><a href="./pages/farming-info.html">→ Read More</a>
-                </div>
+                </article>
                 `
             );
         });
@@ -48,31 +48,31 @@ if(true){
     }else{
         //placeholdr if info data is empty
         infoContainer.insertAdjacentHTML('beforeend',
-            `<div class="card">
-                <div class="img-box">Crop Image</div>
+            `<article class="card">
+                <figure class="img-box"><figcaption>Crop guide</figcaption></figure>
                 <h3>Crop Guide</h3>
                 <p>Learn about crop selection, planting and crop management.</p><a href="./pages/farming-info.html">→ Read More</a>
-            </div>
+            </article>
             `
         );
 
         infoContainer.insertAdjacentHTML('beforeend',
             `
-            <div class="card">
-                <div class="img-box">Pest Image</div>
+            <article class="card">
+                <figure class="img-box"><figcaption>Pest guide</figcaption></figure>
                 <h3>Pest Guide</h3>
                 <p>Learn how to identify and manage common agricultural pests.</p><a href="./pages/farming-info.html">→ Read More</a>
-            </div>
+            </article>
             `
         );
 
         infoContainer.insertAdjacentHTML('beforeend',
             `
-            <div class="card">
-                <div class="img-box">Fertilizer Image</div>
+            <article class="card">
+                <figure class="img-box"><figcaption>Fertilizer guide</figcaption></figure>
                 <h3>Fertilizer Guide</h3>
                 <p>Learn about fertilizer selection and proper application.</p><a href="./pages/farming-info.html">→ Read More</a>
-            </div>
+            </article>
             `
         );
         
@@ -92,10 +92,10 @@ if(true){
 
             eventContainer.insertAdjacentHTML("beforeend",
                 `
-                <div id="${v.trainingId}" class="training-bar">
+                <article id="${v.trainingId}" class="training-bar">
                     <p><b>${v.title}</b> • Date: ${parseDate(v.trainingDate)} • Location: ${v.city}, ${v.country} </p>
-                    <a href="./pages/training.html"><button>View Details</button></a>
-                </div>
+                    <a class="training-link" href="./pages/training.html">View Details</a>
+                </article>
                 `
             );
         });
@@ -105,10 +105,10 @@ if(true){
         //if event data is empty
         eventContainer.insertAdjacentHTML("beforeend",
             `
-            <div class="training-bar">
+            <article class="training-bar">
                 <p><b>Modern Maize Production</b> • Date: 1 November • Location: Ndola</p>
-                <a href="./pages/training.html"><button>View Details</button></a>
-            </div>
+                <a class="training-link" href="./pages/training.html">View Details</a>
+            </article>
             `
         );
 
@@ -126,12 +126,12 @@ if(true){
     if(datav){
         datav.forEach((v,k)=>{
             cardContainer.insertAdjacentHTML('beforeend',
-                `<div id="${v.productId}" class="card">
-                    <img class="img-box" src="${v.pronductImage}" alt="Image of ${v.productName}" />
+                `<article id="${v.productId}" class="card">
+                    <figure class="img-box"><img src="${v.pronductImage}" alt="Image of ${v.productName}" /></figure>
                     <h3>${v.productName}</h3>
-                    <p>Price: ZMW ${parsePrices(v.price)} /kg</p><a href="./pages/marketplace.html">
-                    <button class="view-btn">View</button></a>
-                </div>`
+                    <p>Price: ZMW ${parsePrices(v.price)} /kg</p>
+                    <a class="view-btn" href="./pages/marketplace.html">View</a>
+                </article>`
             );
         })
     }

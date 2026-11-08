@@ -14,13 +14,15 @@ try{
     menu.addEventListener('click',(e)=>{
         e.preventDefault();
 
-        nav.classList.toggle("active")
+        nav.classList.toggle("active");
+        menu.setAttribute("aria-expanded", String(nav.classList.contains("active")));
     });
 
     leftMenu.addEventListener('click',(e)=>{
         e.preventDefault();
 
-        nav.classList.toggle("active")
+        nav.classList.remove("active");
+        menu.setAttribute("aria-expanded", "false");
     });
 }catch(e){
     console.log(e);

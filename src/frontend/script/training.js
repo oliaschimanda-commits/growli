@@ -103,12 +103,12 @@ function setData(mData) {
     mData.forEach((v,k) =>{
         
         trainingContainer.insertAdjacentHTML('beforeend',
-            `<div id="${v.trainingId}" class="card">
-                <img class="img-box src="${v.trainingImage}" alt="image of ${v.title}">
+            `<article id="${v.trainingId}" class="card">
+                <figure class="img-box"><img src="${v.trainingImage}" alt="Image of ${v.title}"></figure>
                 <h3>${v.title}</h3>
                 <p>Date: ${parseDate(v.trainingDate)}</p>
-                <p>Location: ${v.city}</p><button class="view-btn">View Details</button>
-            </div>
+                <p>Location: ${v.city}</p><button class="view-btn" type="button">View Details</button>
+            </article>
             `
         );
 

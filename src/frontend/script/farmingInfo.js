@@ -107,11 +107,11 @@ function setData(mData) {
         
         infoContainer.insertAdjacentHTML('beforeend',
             `
-            <div id="${v.farmingId}" class="card">
-                <img  class="img-box" src-"${v.farmingInfoImage}" alt="Image of ${v.title}" />
+            <article id="${v.farmingId}" class="card">
+                <figure class="img-box"><img src="${v.farmingInfoImage}" alt="Image of ${v.title}" /></figure>
                 <h3>${v.title}</h3>
                 <p class="trex" >${v.article}.</p><a href="#">Read More</a>
-            </img>
+            </article>
             `
         );
 
