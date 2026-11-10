@@ -529,6 +529,63 @@ section h2 {
     padding: 10px 20px;
 }
 
+/* Login register */
+.login-main {
+    width: 100%;
+    display: flex;
+    padding-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.login-main form {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.login-main form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-main form p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.register-main {
+    width: 100%;
+    display: flex;
+    padding-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.register-main form {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.register-main form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.register-main form p {
+    text-align: center;
+    margin-top: 10px;
+}
+
 /* Dashboard */
 .dashboard-main {
     width: 100%;
@@ -663,26 +720,28 @@ footer .logo {
 @media(max-width:900px) {
     header {
         flex-direction: column;
-        justify-content: space-evenly;
-        gap: 20px;
-        padding: 20px 0;
-    }
-    header .logo{
-        width: 100%;
         justify-content: space-between;
+        justify-items: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    header button {
+        display: flex;
+        justify-items: center;
+        align-items: center;
     }
     header nav{
         width: 40%;
-        align-self: end;
+        height: auto;
         position: absolute;
         display: none;
         padding: 20px;
-        top: 0px;
+        top: 0;
+        right: 0;
         gap: 10px;
-        background-color: var(--harvest-gold);
-        align-self: flex-start;
+        background-color: var(--warm-cream);
         flex-direction: column;
-        align-items: start;
     }
 
     .hidden{
@@ -701,6 +760,7 @@ footer .logo {
     header nav .auth,
     header nav .profile {
         flex-direction: column;
+        align-items: start;
     }
 
     nav.active{
@@ -717,10 +777,10 @@ footer .logo {
         display: flex;
     }
     .menu-side{
-        display: inline;
+        width: 100%;
+        display: flex;
     }
 
-    
 
     .links {
         flex-wrap: wrap;
@@ -766,29 +826,30 @@ footer .logo {
 /* Responsive Styles - Mobile */
 
 @media(max-width:600px) {
-
     header {
         flex-direction: column;
-        justify-content: space-evenly;
-        gap: 20px;
-        padding: 20px 0;
-    }
-    header .logo{
-        width: 100%;
         justify-content: space-between;
+        justify-items: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    header button {
+        display: flex;
+        justify-items: center;
+        align-items: center;
     }
     header nav{
         width: 40%;
-        align-self: end;
+        height: auto;
         position: absolute;
         display: none;
         padding: 20px;
-        top: 0px;
+        top: 0;
+        right: 0;
         gap: 10px;
-        background-color: var(--harvest-gold);
-        align-self: flex-start;
+        background-color: var(--warm-cream);
         flex-direction: column;
-        align-items: start;
     }
 
     .hidden{
@@ -807,6 +868,7 @@ footer .logo {
     header nav .auth,
     header nav .profile {
         flex-direction: column;
+        align-items: start;
     }
 
     nav.active{
@@ -823,13 +885,15 @@ footer .logo {
         display: flex;
     }
     .menu-side{
-        display: inline;
+        width: 100%;
+        display: flex;
     }
 
 
     .links {
-        flex-direction: row-reverse;
-        gap: 5px
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
     .auth {
         width: 100%;
@@ -1266,8 +1330,6 @@ main {
     .site-header nav {
         width: min(340px, 86vw);
         top: 0;
-        right: 0;
-        left: auto;
         align-items: stretch;
         padding: 18px;
         box-shadow: 0 12px 28px rgba(30, 41, 27, .18);

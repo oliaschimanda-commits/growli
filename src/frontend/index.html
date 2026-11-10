@@ -7,17 +7,20 @@
     <title>Growli | Farming Information Made Accessible</title>
     <link rel="stylesheet" href="style/style.css">
     <script type="module" src="./script/main.js" defer></script>
+    <script type="module" src="./script/index.js" defer></script>
 </head>
 <body>
     <header class="site-header">
+        
         <a class="brand" href="./index.html" aria-label="Growli home">
             <img src="./images/growli-logo.png" alt="Growli">
         </a>
         <button id="menu" class="menu" type="button" aria-label="Open navigation" aria-controls="main-nav" aria-expanded="false">
             <img src="./images/menu.png" alt="">
         </button>
+        
         <nav id="main-nav" class="hidden" aria-label="Main navigation">
-            <button id="menu-side" class="menu-side" type="button" aria-label="Close navigation" aria-controls="main-nav">
+            <button id="menu-side" class="menu-side" type="button" aria-label="Close navigation" aria-controls="main-nav" >
                 <img src="./images/menu.png" alt="">
             </button>
             <ul class="links">
@@ -80,59 +83,26 @@
         <section id="featured-info" aria-labelledby="featured-title">
             <h2 id="featured-title">Featured Farming Information</h2>
             <p>Explore our curated selection of articles, guides, and resources on various farming topics. Stay up-to-date with the latest trends and best practices in agriculture.</p>
-            <article class="grid-3" aria-label="Featured farming guides">
-                <article class="card">
-                    <figure class="img-box"><figcaption>Crop Guide Image</figcaption></figure>
-                    <h3>Crop Guide</h3>
-                    <p>Learn about different crops, their growth requirements, and best practices for cultivation.</p>
-                    <a href="./pages/farming-info.html">Learn More</a>
-                </article>
-                <article class="card">
-                    <figure class="img-box"><figcaption>Livestock Guide Image</figcaption></figure>
-                    <h3>Livestock Guide</h3>
-                    <p>Discover best practices for raising healthy livestock, including nutrition, housing, and disease prevention.</p>
-                    <a href="./pages/farming-info.html">Learn More</a>
-                </article>
-                <article class="card">
-                    <figure class="img-box"><figcaption>Soil Health Image</figcaption></figure>
-                    <h3>Soil Health Guide</h3>
-                    <p>Understand the importance of soil health and learn techniques to improve soil fertility and structure.</p>
-                    <a href="./pages/farming-info.html">Learn More</a>
-                </article>
+            <article id="info-container" class="grid-3" aria-label="Featured farming guides">
+                
+                
+                
             </article>
         </section>
 
         <section id="events" aria-labelledby="events-title">
             <h2 id="events-title">Upcoming Events</h2>
             <p>Stay updated with the latest agricultural events and conferences. Join us for networking opportunities and knowledge sharing.</p>
-            <article class="training-bar">
-                <p><b>Agricultural Training Conference</b> &bull; Date: 1 November &bull; Location: Ndola</p>
-                <a class="training-link" href="./pages/training.html">View Details</a>
-            </article>
+            <article id="event-container" aria-label="Upcoming agricultural training"></article>
         </section>
 
         <section id="products" aria-labelledby="products-title">
             <h2 id="products-title">Products From Farmers</h2>
             <p>Discover a variety of agricultural products available for purchase directly from local farmers. Support your community and access fresh, high-quality produce.</p>
-            <article class="grid-3" aria-label="Products from farmers">
-                <article class="card">
-                    <figure class="img-box"><figcaption>Fresh Produce Image</figcaption></figure>
-                    <h3>Fresh Produce</h3>
-                    <p>Buy fresh fruits and vegetables directly from local farmers.</p>
-                    <a class="view-btn" href="./pages/marketplace.html">View</a>
-                </article>
-                <article class="card">
-                    <figure class="img-box"><figcaption>Livestock Products Image</figcaption></figure>
-                    <h3>Livestock Products</h3>
-                    <p>Purchase meat, dairy, and other livestock products from trusted local sources.</p>
-                    <a class="view-btn" href="./pages/marketplace.html">View</a>
-                </article>
-                <article class="card">
-                    <figure class="img-box"><figcaption>Agricultural Tools Image</figcaption></figure>
-                    <h3>Agricultural Tools</h3>
-                    <p>Find a variety of farming tools and equipment to support your agricultural activities.</p>
-                    <a class="view-btn" href="./pages/marketplace.html">View</a>
-                </article>
+            <article id="card-container" class="grid-3" aria-label="Products from farmers">
+                
+                
+                
             </article>
         </section>
     </main>

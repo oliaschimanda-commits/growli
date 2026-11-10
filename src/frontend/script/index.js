@@ -26,115 +26,122 @@ console.log("index", isLoggedIn.isLogged)
 if(true){
 
     //farming info
-    const info = await getFarmingInfo();
-
-    const infoData = JSON.parse(JSON.stringify(info));
-
     const infoContainer = document.getElementById("info-container");
-
-    if(!infoData){
-            
-        infoData.forEach((v,k)=>{
-            infoContainer.insertAdjacentHTML('beforeend',
-                `<article id="${v.farmingId}" class="card">
-                    <figure class="img-box"><img src="${v.farmingInfoImage}" alt="Picture of ${v.title}" ></figure>
-                    <h3>${v.title}</h3>
-                    <p>${v.article}</p><a href="./pages/farming-info.html">→ Read More</a>
-                </article>
-                `
-            );
-        });
-
-    }else{
-        //placeholdr if info data is empty
-        infoContainer.insertAdjacentHTML('beforeend',
-            `<article class="card">
-                <figure class="img-box"><figcaption>Crop guide</figcaption></figure>
-                <h3>Crop Guide</h3>
-                <p>Learn about crop selection, planting and crop management.</p><a href="./pages/farming-info.html">→ Read More</a>
-            </article>
-            `
-        );
-
-        infoContainer.insertAdjacentHTML('beforeend',
-            `
-            <article class="card">
-                <figure class="img-box"><figcaption>Pest guide</figcaption></figure>
-                <h3>Pest Guide</h3>
-                <p>Learn how to identify and manage common agricultural pests.</p><a href="./pages/farming-info.html">→ Read More</a>
-            </article>
-            `
-        );
-
-        infoContainer.insertAdjacentHTML('beforeend',
-            `
-            <article class="card">
-                <figure class="img-box"><figcaption>Fertilizer guide</figcaption></figure>
-                <h3>Fertilizer Guide</h3>
-                <p>Learn about fertilizer selection and proper application.</p><a href="./pages/farming-info.html">→ Read More</a>
-            </article>
-            `
-        );
+    try {
         
+        const info = await getFarmingInfo();
 
+        const infoData = JSON.parse(JSON.stringify(info));
+
+
+        if(!infoData){
+                
+            infoData.forEach((v,k)=>{
+                infoContainer.insertAdjacentHTML('beforeend',
+                    `<article id="${v.farmingId}" class="card">
+                        <figure class="img-box"><img src="${v.farmingInfoImage}" alt="Picture of ${v.title}" ></figure>
+                        <h3>${v.title}</h3>
+                        <p>${v.article}</p><a href="./pages/farming-info.html">→ Read More</a>
+                    </article>
+                    `
+                );
+            });
+
+        }else{
+            //placeholdr if info data is empty
+            infoHolder(infoContainer);
+
+        }
+
+    } catch (error) {
+        console.log("Error fetching farming info: ", error);
+        infoHolder(infoContainer);
     }
 
     //events
-    const event = await getEvents();
-
-    const eventData = JSON.parse(JSON.stringify(event));
-
     const eventContainer = document.getElementById("event-container");
+    try {
+        
+        const event = await getEvents();
 
-    if(!eventData){
+        const eventData = JSON.parse(JSON.stringify(event));
 
-        eventData.forEach((v,k)=>{
 
+        if(!eventData){
+
+            eventData.forEach((v,k)=>{
+
+                eventContainer.insertAdjacentHTML("beforeend",
+                    `
+                    <article id="${v.trainingId}" class="training-bar">
+                        <p><b>${v.title}</b> • Date: ${parseDate(v.trainingDate)} • Location: ${v.city}, ${v.country} </p>
+                        <a class="training-link" href="./pages/training.html">View Details</a>
+                    </article>
+                    `
+                );
+            });
+            
+        }else{
+
+            //if event data is empty
             eventContainer.insertAdjacentHTML("beforeend",
                 `
-                <article id="${v.trainingId}" class="training-bar">
-                    <p><b>${v.title}</b> • Date: ${parseDate(v.trainingDate)} • Location: ${v.city}, ${v.country} </p>
+                <article id="event-container" class="training-bar">
+                    <p><b>Agricultural Training Conference</b> &bull; Date: 1 November &bull; Location: Ndola</p>
                     <a class="training-link" href="./pages/training.html">View Details</a>
                 </article>
                 `
             );
-        });
-        
-    }else{
 
-        //if event data is empty
+        }
+
+    } catch (error) {
+        console.log("Error fetching events: ", error);
         eventContainer.insertAdjacentHTML("beforeend",
             `
-            <article class="training-bar">
-                <p><b>Modern Maize Production</b> • Date: 1 November • Location: Ndola</p>
+            <article id="event-container" class="training-bar">
+                <p><b>Agricultural Training Conference</b> &bull; Date: 1 November &bull; Location: Ndola</p>
                 <a class="training-link" href="./pages/training.html">View Details</a>
             </article>
             `
         );
-
     }
 
 
     //Products
 
-    const product = await getProducts();
+    try {
+            
+        const product = await getProducts();
 
-    console.log("Product: ",product)
+        console.log("Product: ",product)
 
-    const datav = JSON.parse(JSON.stringify(product.data));
+        const datav = JSON.parse(JSON.stringify(product.data));
 
-    if(datav){
-        datav.forEach((v,k)=>{
-            cardContainer.insertAdjacentHTML('beforeend',
-                `<article id="${v.productId}" class="card">
-                    <figure class="img-box"><img src="${v.pronductImage}" alt="Image of ${v.productName}" /></figure>
-                    <h3>${v.productName}</h3>
-                    <p>Price: ZMW ${parsePrices(v.price)} /kg</p>
-                    <a class="view-btn" href="./pages/marketplace.html">View</a>
-                </article>`
-            );
-        })
+        if(datav){
+            datav.forEach((v,k)=>{
+                cardContainer.insertAdjacentHTML('beforeend',
+                    `<article id="${v.productId}" class="card">
+                        <figure class="img-box"><img src="${v.pronductImage}" alt="Image of ${v.productName}" /></figure>
+                        <h3>${v.productName}</h3>
+                        <p>Price: ZMW ${parsePrices(v.price)} /kg</p>
+                        <a class="view-btn" href="./pages/marketplace.html">View</a>
+                    </article>`
+                );
+            })
+        }else{
+            
+            productHolder(cardContainer);
+
+        
+        }
+        
+    } catch (error) {
+        console.log("Error fetching products: ", error);
+
+        productHolder(cardContainer);
     }
+
 }
 
 function parsePrices(price){
@@ -186,4 +193,77 @@ async function getEvents() {
     });
 
     return event;
+}
+
+//holder data for testing purposes
+
+function productHolder(container) {
+    
+    container.insertAdjacentHTML('beforeend',
+        `
+        <article class="card">
+            <figure class="img-box"><figcaption>Fresh Produce Image</figcaption></figure>
+            <h3>Fresh Produce</h3>
+            <p>Buy fresh fruits and vegetables directly from local farmers.</p>
+            <a class="view-btn" href="./pages/marketplace.html">View</a>
+        </article>
+        `
+    );
+
+    container.insertAdjacentHTML('beforeend',
+        `
+        <article class="card">
+            <figure class="img-box"><figcaption>Livestock Products Image</figcaption></figure>
+            <h3>Livestock Products</h3>
+            <p>Purchase meat, dairy, and other livestock products from trusted local sources.</p>
+            <a class="view-btn" href="./pages/marketplace.html">View</a>
+        </article>
+        `
+    );
+
+    container.insertAdjacentHTML('beforeend',
+        `
+        <article class="card">
+            <figure class="img-box"><figcaption>Agricultural Tools Image</figcaption></figure>
+            <h3>Agricultural Tools</h3>
+            <p>Find a variety of farming tools and equipment to support your agricultural activities.</p>
+            <a class="view-btn" href="./pages/marketplace.html">View</a>
+        </article>
+        `
+    );
+}
+
+function infoHolder(container) {
+    container.insertAdjacentHTML('beforeend',
+        `
+        <article class="card">
+            <figure class="img-box"><figcaption>Crop Guide Image</figcaption></figure>
+            <h3>Crop Guide</h3>
+            <p>Learn about different crops, their growth requirements, and best practices for cultivation.</p>
+            <a href="./pages/farming-info.html">Learn More</a>
+        </article>
+        `
+    );
+
+    container.insertAdjacentHTML('beforeend',
+        `
+        <article class="card">
+            <figure class="img-box"><figcaption>Livestock Guide Image</figcaption></figure>
+            <h3>Livestock Guide</h3>
+            <p>Discover best practices for raising healthy livestock, including nutrition, housing, and disease prevention.</p>
+            <a href="./pages/farming-info.html">Learn More</a>
+        </article>
+        `
+    );
+
+    container.insertAdjacentHTML('beforeend',
+        `
+        <article class="card">
+            <figure class="img-box"><figcaption>Soil Health Image</figcaption></figure>
+            <h3>Soil Health Guide</h3>
+            <p>Understand the importance of soil health and learn techniques to improve soil fertility and structure.</p>
+            <a href="./pages/farming-info.html">Learn More</a>
+        </article>
+        `
+    );
 }
