@@ -792,6 +792,7 @@ footer .logo {
     .menu-side{
         width: 100%;
         display: flex;
+        justify-content: left;
     }
 
 
@@ -903,6 +904,7 @@ footer .logo {
     .menu-side{
         width: 100%;
         display: flex;
+        justify-content: left;
     }
 
 
