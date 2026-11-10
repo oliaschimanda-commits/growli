@@ -533,7 +533,7 @@ section h2 {
 .login-main {
     width: 100%;
     display: flex;
-    padding-top: 20px;
+    padding: 20px;
     flex-direction: column;
     align-items: center;
     margin-top: 80px;
@@ -558,10 +558,16 @@ section h2 {
     margin-top: 10px;
 }
 
+.login-main form button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+
 .register-main {
     width: 100%;
     display: flex;
-    padding-top: 20px;
+    padding: 20px;
     flex-direction: column;
     align-items: center;
     margin-top: 80px;
@@ -584,6 +590,12 @@ section h2 {
 .register-main form p {
     text-align: center;
     margin-top: 10px;
+}
+
+.register-main form button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
 }
 
 /* Dashboard */
