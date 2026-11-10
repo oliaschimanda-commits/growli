@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Growli - Contact</title>
+    <title>Growli - Marketplace</title>
     <link rel="stylesheet" href="../style/style.css">
+    <script type="module" src="../script/marketplace.js" defer></script>
     <script type="module" src="../script/main.js" defer></script>
 </head>
 
@@ -19,8 +20,8 @@
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="./farming-info.html">Farming Info</a></li>
                 <li><a href="./training.html">Training</a></li>
-                <li><a href="./marketplace.html">Marketplace</a></li>
-                <li><a href="./contact.html" aria-current="page">Contact</a></li>
+                <li><a href="./marketplace.html" aria-current="page">Marketplace</a></li>
+                <li><a href="./contact.html">Contact</a></li>
                 <li><a href="./about.html">About</a></li>
             </ul>
             <aside id="auth" class="auth" aria-label="Account options">
@@ -35,30 +36,24 @@
     </header>
     <main>
     <section>
-        <h1>Contact Us</h1>
-        <p>Have a question or need more information? Get in touch with the Growli team.</p>
+        <h1>Farmers Marketplace</h1>
+        <p>Discover agricultural products offered by farmers in different parts of Zambia.</p>
+        <form class="hero-search" role="search">
+            <input id="search-product" name="search-product" type="search" placeholder="Search products" aria-label="Search products">
+            <button id="search-button" class="enter-btn" type="button">Search</button>
+        </form>
     </section>
-    <section id="contact">
-        <article class="contact-left">
-            <h2>Contact Information</h2>
-            <p><b>Email:</b> info@growli.example</p>
-            <p><b>Phone:</b> +260 XXX XXX XXX</p>
-            <p><b>Address:</b> Ndola, Zambia</p>
-            <p><b>Working Hours:</b> Monday - Friday, 08:00 - 17:00</p>
-        </article>
-        <article class="contact-right">
-            <h2>Send Us a Message</h2>
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <input type="text" placeholder="Subject">
-            <textarea placeholder="Write your message..."></textarea>
-            <button class="enter-btn" type="button">Send Message</button>
-        </article>
+    <section>
+        <h2>Products From Farmers</h2>
+        <article id="market-container" class="grid-3" aria-label="Products from farmers"></article>
+        <nav class="more-nav" aria-label="Product pagination">
+            <button id="next-btn" class="next-btn" type="button">More...</button>
+        </nav>
     </section>
     </main>
     <footer>
         <article class="footer-container" aria-label="Growli footer">
-            <article class="footer-col"><p class="logo">Growli</p><p>Farming information made accessible.</p></article>
+            <article class="footer-col"><figure class="footer-brand"><img src="../images/growli-logo.png" alt="Growli Logo"><figcaption>Growli</figcaption></figure><p>Farming information made accessible.</p></article>
             <nav class="footer-col" aria-label="Direct links">
                 <h2>Direct Links</h2><a href="../index.html">Home</a><a href="./farming-info.html">Farming Info</a><a href="./training.html">Training</a><a href="./marketplace.html">Marketplace</a><a href="./contact.html">Contact</a><a href="./about.html">About</a>
             </nav>

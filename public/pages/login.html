@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Growli - Training</title>
+    <title>Growli - Login</title>
     <link rel="stylesheet" href="../style/style.css">
-    <script type="module" src="../script/training.js" defer></script>
+    <script type="module" src="../script/login.js" defer></script>
     <script type="module" src="../script/main.js" defer></script>
 </head>
 
@@ -19,7 +19,7 @@
             <ul class="links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="./farming-info.html">Farming Info</a></li>
-                <li><a href="./training.html" aria-current="page">Training</a></li>
+                <li><a href="./training.html">Training</a></li>
                 <li><a href="./marketplace.html">Marketplace</a></li>
                 <li><a href="./contact.html">Contact</a></li>
                 <li><a href="./about.html">About</a></li>
@@ -34,43 +34,20 @@
             </aside>
         </nav>
     </header>
-    <main>
-    <section>
-        <h1>Farmer Training</h1>
-        <p>Improve your farming knowledge and skills through workshops, courses and practical training.</p>
-        <form class="hero-search" role="search">
-            <input id="search-training" name="search-training" type="search" placeholder="Search training" aria-label="Search training">
-            <button id="search-button" class="enter-btn" type="button">Search</button>
+    <main class="login-main">
+        <h1>Login</h1>
+        <form id="form-login" class="card">
+            <h2>Welcome Back</h2>
+            <p>Login to your Growli account.</p>
+            <input type="email" placeholder="Email Address" name="email" ><br><br>
+            <input type="password" placeholder="Password" name="password"><br><br>
+            <button type="submit" class="enter-btn">Login</button>
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
         </form>
-    </section>
-    <section>
-        <h2>Upcoming Training</h2>
-        <article id="training-container" class="grid-3" aria-label="Upcoming training"></article>
-        <nav class="more-nav" aria-label="Training pagination">
-            <button id="next-btn" class="next-btn" type="button">More...</button>
-        </nav>
-    </section>
-    <section>
-        <h2>Training Categories</h2>
-        <article class="grid-3">
-            <article class="card">
-                <h3>Crop Production</h3>
-                <p>Learn modern crop production techniques.</p>
-            </article>
-            <article class="card">
-                <h3>Livestock Farming</h3>
-                <p>Learn better livestock management practices.</p>
-            </article>
-            <article class="card">
-                <h3>Agribusiness</h3>
-                <p>Learn how to manage and grow a farming business.</p>
-            </article>
-        </article>
-    </section>
     </main>
     <footer>
         <article class="footer-container" aria-label="Growli footer">
-            <article class="footer-col"><p class="logo">Growli</p><p>Farming information made accessible.</p></article>
+            <article class="footer-col"><figure class="footer-brand"><img src="../images/growli-logo.png" alt="Growli Logo"><figcaption>Growli</figcaption></figure><p>Farming information made accessible.</p></article>
             <nav class="footer-col" aria-label="Direct links">
                 <h2>Direct Links</h2><a href="../index.html">Home</a><a href="./farming-info.html">Farming Info</a><a href="./training.html">Training</a><a href="./marketplace.html">Marketplace</a><a href="./contact.html">Contact</a><a href="./about.html">About</a>
             </nav>

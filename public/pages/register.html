@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Growli - Marketplace</title>
+    <title>Growli - Register</title>
     <link rel="stylesheet" href="../style/style.css">
-    <script type="module" src="../script/marketplace.js" defer></script>
+    <script type="module" src="../script/register.js" defer></script>
     <script type="module" src="../script/main.js" defer></script>
 </head>
 
@@ -20,7 +20,7 @@
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="./farming-info.html">Farming Info</a></li>
                 <li><a href="./training.html">Training</a></li>
-                <li><a href="./marketplace.html" aria-current="page">Marketplace</a></li>
+                <li><a href="./marketplace.html">Marketplace</a></li>
                 <li><a href="./contact.html">Contact</a></li>
                 <li><a href="./about.html">About</a></li>
             </ul>
@@ -34,26 +34,23 @@
             </aside>
         </nav>
     </header>
-    <main>
-    <section>
-        <h1>Farmers Marketplace</h1>
-        <p>Discover agricultural products offered by farmers in different parts of Zambia.</p>
-        <form class="hero-search" role="search">
-            <input id="search-product" name="search-product" type="search" placeholder="Search products" aria-label="Search products">
-            <button id="search-button" class="enter-btn" type="button">Search</button>
+    <main class="register-main">
+        <h1>Create an Account</h1>
+        <form class="card" id="register-form">
+            <h2>Register</h2>
+            <p>Create your Growli account.</p>
+            <input name="firstName" type="text" placeholder="First Name"><br><br>
+            <input name="lastName" type="text" placeholder="Last Name" ><br><br>
+            <input name="email" type="email" placeholder="Email Address" ><br><br>
+            <input name="password" type="password" placeholder="Password" ><br><br>
+            <input name="confirm_password" type="password" placeholder="Confirm Password" ><br><br>
+            <button type="submit" class="enter-btn">Create Account</button>
+            <p>Already have an account? <a href="login.html">Login here</a></p>
         </form>
-    </section>
-    <section>
-        <h2>Products From Farmers</h2>
-        <article id="market-container" class="grid-3" aria-label="Products from farmers"></article>
-        <nav class="more-nav" aria-label="Product pagination">
-            <button id="next-btn" class="next-btn" type="button">More...</button>
-        </nav>
-    </section>
     </main>
     <footer>
         <article class="footer-container" aria-label="Growli footer">
-            <article class="footer-col"><p class="logo">Growli</p><p>Farming information made accessible.</p></article>
+            <article class="footer-col"><figure class="footer-brand"><img src="../images/growli-logo.png" alt="Growli Logo"><figcaption>Growli</figcaption></figure><p>Farming information made accessible.</p></article>
             <nav class="footer-col" aria-label="Direct links">
                 <h2>Direct Links</h2><a href="../index.html">Home</a><a href="./farming-info.html">Farming Info</a><a href="./training.html">Training</a><a href="./marketplace.html">Marketplace</a><a href="./contact.html">Contact</a><a href="./about.html">About</a>
             </nav>
