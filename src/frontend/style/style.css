@@ -91,6 +91,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 header .logo {
@@ -740,8 +741,8 @@ footer .logo {
 
     header button {
         display: flex;
-        justify-items: center;
         align-items: center;
+        justify-content: end;
     }
     header nav{
         width: 40%;
@@ -828,6 +829,9 @@ footer .logo {
         border-right: none;
         border-bottom: 1px solid #aaa
     }
+    .contact-right .enter-btn {
+        width: 100%;
+    }
     .footer-container {
         grid-template-columns: 1fr 1fr;
         padding: 40px 8%;
@@ -848,8 +852,8 @@ footer .logo {
 
     header button {
         display: flex;
-        justify-items: center;
         align-items: center;
+        justify-content: end;
     }
     header nav{
         width: 40%;
@@ -955,6 +959,9 @@ footer .logo {
     }
     .training-bar button {
         width: 100%
+    }
+    .contact-right .enter-btn {
+        width: 100%;
     }
     .footer-container {
         grid-template-columns: 1fr;
